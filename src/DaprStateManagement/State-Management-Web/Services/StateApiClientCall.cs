@@ -1,12 +1,14 @@
 using System;
 using System.Net.Http;
-using System.Text.Json;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using State_Management_Models;
 using State_Management_Web.Interfaces;
 using State_Management_Web.Settings;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace State_Management_Web.Services
 {
@@ -15,7 +17,8 @@ namespace State_Management_Web.Services
         private readonly HttpClient client;
         private readonly ILogger<StateApiClientCall> logger;
 
-        public StateApiClientCall(HttpClient client, IOptions<WebSettings> webSettingsValue, ILogger<StateApiClientCall> logger)
+        public StateApiClientCall(HttpClient client, IOptions<WebSettings> webSettingsValue,
+            ILogger<StateApiClientCall> logger)
         {
             client.BaseAddress = new Uri(webSettingsValue.Value.WebApiLink, UriKind.RelativeOrAbsolute);
             this.client = client;
@@ -33,12 +36,15 @@ namespace State_Management_Web.Services
 
                 var responseStream = await response.Content.ReadAsStringAsync();
                 logger.LogInformation($"Data received: {responseStream}");
-                return JsonSerializer.Deserialize<Person>(responseStream);
+                var person = JsonConvert.DeserializeObject<Person>(responseStream);
+                //var person = JsonSerializer.Deserialize<Person>(responseStream);
+                return person;
             }
             catch (Exception e)
             {
                 logger.LogError(e.Message);
             }
+
             return new Person();
         }
 
@@ -47,8 +53,10 @@ namespace State_Management_Web.Services
             try
             {
                 logger.LogInformation("Saving person");
-                string currentPerson = JsonSerializer.Serialize(person);
-                var response = await client.PostAsync($"add",new StringContent(currentPerson));
+                string currentPerson = JsonConvert.SerializeObject(person);
+                //string currentPerson = JsonSerializer.Serialize(person);
+                var response = await client.PostAsync($"add",
+                    new StringContent(currentPerson, Encoding.UTF8, "application/json"));
                 response.EnsureSuccessStatusCode();
                 logger.LogInformation("Save executed successfully.");
                 return true;

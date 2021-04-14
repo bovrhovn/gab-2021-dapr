@@ -25,7 +25,8 @@ namespace State_Management_Web.Pages.Info
             if (!string.IsNullOrEmpty(email))
             {
                 logger.LogInformation($"Getting person by email {email}");
-                RetrievedPerson = await stateApi.GetPersonAsync(email);
+                var person = await stateApi.GetPersonAsync(email);
+                RetrievedPerson = person;
                 logger.LogInformation($"Person retrieved {RetrievedPerson.FullName}");
                 Message = "";
             }

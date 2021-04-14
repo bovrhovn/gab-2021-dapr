@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using State_Management_Dapr_Web_Api.Settings;
 
 namespace State_Management_Dapr_Web_Api
 {
@@ -15,6 +16,7 @@ namespace State_Management_Dapr_Web_Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<WebSettings>(Configuration);
             services.AddControllers().AddDapr();
             services.AddSwaggerGen(c =>
             {

@@ -4,6 +4,8 @@ using Dapr;
 using Dapr.Client;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using State_Management_Dapr_Web_Api.Settings;
 using State_Management_Models;
 
 namespace State_Management_Dapr_Web_Api.Controllers
@@ -12,18 +14,23 @@ namespace State_Management_Dapr_Web_Api.Controllers
     [Route("persons")]
     public class PersonApiController : ControllerBase
     {
-        public const string StoreName = "statestore";
+        private readonly string StoreName;
         private readonly DaprClient client;
         private readonly ILogger<PersonApiController> logger;
 
-        public PersonApiController(DaprClient client, ILogger<PersonApiController> logger)
+        public PersonApiController(DaprClient client, ILogger<PersonApiController> logger, IOptions<WebSettings> webSettingsValue)
         {
             this.client = client;
             this.logger = logger;
+            StoreName = webSettingsValue.Value.StoreStateName;
         }
 
+        [HttpGet]
+        [Route("test")]
+        public IActionResult IsEndpointOk() => Ok($"I am ok at {DateTime.Now}");
+
         [HttpGet("byobject/{person}")]
-        public ActionResult<Person> Get([FromState(StoreName)] StateEntry<Person> person)
+        public ActionResult<Person> Get([FromState("statestore")] StateEntry<Person> person)
         {
             if (person.Value is null) return NotFound();
             return person.Value;
@@ -37,6 +44,11 @@ namespace State_Management_Dapr_Web_Api.Controllers
             {
                 logger.LogInformation($"Getting data for specific {email}");
                 var person = await client.GetStateAsync<Person>(StoreName, email);
+                if (person == null)
+                {
+                    logger.LogInformation("No data was found in the system");
+                    return Ok(new Person());
+                }
                 logger.LogInformation($"Data received: {person.FullName}");
                 return person;
             }
@@ -54,7 +66,7 @@ namespace State_Management_Dapr_Web_Api.Controllers
             try
             {
                 await client.SaveStateAsync(StoreName, person.Email, person);
-                logger.LogInformation("Person was saved");
+                logger.LogInformation($"Person {person.FullName} was saved");
             }
             catch (Exception e)
             {
