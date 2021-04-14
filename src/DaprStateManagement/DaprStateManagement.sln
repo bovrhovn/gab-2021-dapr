@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State-Management-Dapr-Cli", "State-Management-Dapr-Cli\State-Management-Dapr-Cli.csproj", "{4ACA978C-4764-417B-81BB-E466B223448E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State-Management-Dapr-Web-Api", "State-Management-Dapr-Web-Api\State-Management-Dapr-Web-Api.csproj", "{255E53AB-F472-4631-AE82-3B2A26D1851E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State-Management-Models", "State-Management-Models\State-Management-Models.csproj", "{C8131C0C-4E60-4503-B955-E4F76F684476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State-Management-Web", "State-Management-Web\State-Management-Web.csproj", "{92DB7C61-9E8D-4413-81D1-991027FA57A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{4ACA978C-4764-417B-81BB-E466B223448E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ACA978C-4764-417B-81BB-E466B223448E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ACA978C-4764-417B-81BB-E466B223448E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{255E53AB-F472-4631-AE82-3B2A26D1851E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{255E53AB-F472-4631-AE82-3B2A26D1851E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{255E53AB-F472-4631-AE82-3B2A26D1851E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{255E53AB-F472-4631-AE82-3B2A26D1851E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8131C0C-4E60-4503-B955-E4F76F684476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8131C0C-4E60-4503-B955-E4F76F684476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8131C0C-4E60-4503-B955-E4F76F684476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8131C0C-4E60-4503-B955-E4F76F684476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92DB7C61-9E8D-4413-81D1-991027FA57A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92DB7C61-9E8D-4413-81D1-991027FA57A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92DB7C61-9E8D-4413-81D1-991027FA57A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92DB7C61-9E8D-4413-81D1-991027FA57A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

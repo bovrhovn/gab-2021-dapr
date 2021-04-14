@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Dapr.Client;
 using Spectre.Console;
+using State_Management_Models;
 
 namespace State_Management_Dapr_Cli
 {
@@ -51,12 +52,5 @@ namespace State_Management_Dapr_Cli
             AnsiConsole.Render(new Rule($"[maroon]{title}[/]").RuleStyle("grey").LeftAligned());
             AnsiConsole.WriteLine();
         }
-    }
-
-    public class Person
-    {
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public int Age { get; set; }
     }
 }
