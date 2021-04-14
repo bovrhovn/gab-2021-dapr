@@ -21,7 +21,7 @@ namespace Building_Blocks_Web.Controllers
             this.hubContext = hubContext;
         }
 
-        [Topic("servicebus-pubsub","messages")]
+        [Topic("pubsub","messages")]
         [HttpPost("/messages")]
         public async Task<IActionResult> Handle([FromBody]AmmountMessage message)
         {
@@ -29,6 +29,7 @@ namespace Building_Blocks_Web.Controllers
             logger.LogInformation(info);
             //sending data to signalr
             await hubContext.Clients.All.SendAsync("alertMessage", info);
+            
             logger.LogInformation($"Info has been sent at {DateTime.Now}");
             return Ok();
         }

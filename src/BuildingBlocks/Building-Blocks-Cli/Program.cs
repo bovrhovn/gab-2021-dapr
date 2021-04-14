@@ -20,7 +20,8 @@ namespace Building_Blocks_Cli
         static async Task Main(string[] args)
         {
             HorizontalRule("Building blocks - pub sub");
-            var pubsubName = "servicebus-pubsub";
+            //var pubsubName = "servicebus-pubsub";
+            var pubsubName = "pubsub";
             //publish events via service bus
             using var client = new DaprClientBuilder().Build();
 
