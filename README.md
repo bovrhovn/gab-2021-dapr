@@ -6,10 +6,9 @@ This repository contains demos for my session on [Dapr](https://dapr.io/) (distr
 
 Demos are built in different branches to separate the concepts:
 1. starting with hello-dapr examples in branch [hello-dapr](https://github.com/bovrhovn/gab-2021-dapr/tree/hello-dapr)
-2. dealing with state in branch state-managent
+2. dealing with state in branch [state-managent](https://github.com/bovrhovn/gab-2021-dapr/tree/state-management)
 3. continuing with building blocks examples in branch building-blocks
-4. continuing with Kubernetes examples in branch kubernetes-deployments
-5. finishing with integration examples in branch integration
+4. finishing with integration examples in branch integration
 
 All demos are simple to prove the concepts, main features and capabilities. 
 
