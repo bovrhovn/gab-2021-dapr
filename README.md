@@ -5,10 +5,11 @@ This repository contains demos for my session on [Dapr](https://dapr.io/) (distr
 ![Session on Global Azure 2021 site](https://csacoresettings.blob.core.windows.net/public/gab-2021-dapr.png)
 
 Demos are built in different branches to separate the concepts:
-1. starting with hello-dapr examples in branch hello-dapr
-2. continuing with building blocks examples in branch building-blocks
-3. continuing with Kubernetes examples in branch kubernetes-deployments
-4. finishing with integration examples in branch integration
+1. starting with hello-dapr examples in branch [hello-dapr](https://github.com/bovrhovn/gab-2021-dapr/tree/hello-dapr)
+2. dealing with state in branch state-managent
+3. continuing with building blocks examples in branch building-blocks
+4. continuing with Kubernetes examples in branch kubernetes-deployments
+5. finishing with integration examples in branch integration
 
 All demos are simple to prove the concepts, main features and capabilities. 
 
@@ -21,3 +22,5 @@ During the demos following solutions were used:
 # Additional information
 
 Official Dapr documentation has a [FAQ](https://docs.dapr.io/concepts/faq/) section and link to [Discord forum](https://discord.com/invite/ptHhX6jc34), where you can ask additional questions about Dapr in general or to meet fellow dapr devs.
+
+Check out [quickstarts](https://github.com/dapr/quickstarts) as well.
