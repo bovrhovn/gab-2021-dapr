@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: tablestorage  
+spec:
+  type: state.azure.tablestorage
+  version: v1
+  metadata:
+  - name: accountName
+    value: gadaprdata
+  - name: tableName
+    value: persons
+  - name: accountKey
+    secretKeyRef:
+      name: table-account-key        
+auth:
+  secretStore: azurekeyvault
