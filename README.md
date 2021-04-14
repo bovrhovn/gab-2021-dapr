@@ -16,11 +16,13 @@ With that, you can easily call an API via [Postman](https://www.postman.com/) or
 We will be using Powershell to do our call to the repo.
 
 Let us use defaults and create sidecar containers for communication:
+
 `dapr run --app-id hello-dapr --dapr-http-port 3600`
 
 `Invoke-RestMethod -Method Post -ContentType 'application/json' -Body '[{ "key": "key1", "value": "I am sidecar state saver"}]' -Uri 'http://localhost:3600/v1.0/state/statestore'`
 
 And let use custom folder with custom definitions:
+
 `dapr run --app-id hello-dapr-custom --dapr-http-port 3700 --components-path ./dev-components`
 
 `Invoke-RestMethod -Method Post -ContentType 'application/json' -Body '[{ "key": "key2", "value": "I am sidecar dev component state saver"}]' -Uri 'http://localhost:3700/v1.0/state/dev-statestore'`
