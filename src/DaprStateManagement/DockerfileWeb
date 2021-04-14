@@ -1,0 +1,23 @@
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+
+COPY ["State-Management-Models", "State-Management-Models/"]
+COPY ["State-Management-Web", "State-Management-Web/"]
+
+RUN dotnet restore "State-Management-Models/State-Management-Models.csproj"
+RUN dotnet restore "State-Management-Web/State-Management-Web.csproj"
+
+COPY . .
+
+WORKDIR "/src/"
+
+RUN dotnet build "State-Management-Models/State-Management-Models.csproj" -c Release -o /State-Management-Web
+RUN dotnet build "State-Management-Web/State-Management-Web.csproj" -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish "State-Management-Web/State-Management-Web.csproj" -c Release -o /app
+
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 as final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "State-Management-Web.dll"]
