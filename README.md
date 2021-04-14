@@ -31,6 +31,8 @@ And let use custom folder with custom definitions:
 
 Run the console application **Hello-Dapr-Cli** to get the state from different option (without knowing the implementation).
 
+Also, as an example, how this can be used in Kubernetes, you can check awesome example - [distributed calculator](https://github.com/dapr/quickstarts/tree/v1.0.0/distributed-calculator).
+
 # CREDITS
 
 All credits are located on [main branch](https://github.com/bovrhovn/gab-2021-dapr). 
