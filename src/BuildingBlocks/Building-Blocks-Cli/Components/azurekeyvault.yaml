@@ -1,0 +1,16 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: azurekeyvaultsb  
+spec:
+  type: secretstores.azure.keyvault
+  version: v1
+  metadata:
+    - name: vaultName
+      value: gadaprkv
+    - name: spnTenantId
+      value: "72f988bf-86f1-41af-91ab-2d7cd011db47"
+    - name: spnClientId
+      value: "5231c609-6205-4c62-8182-7fd81312947c"
+    - name: spnCertificateFile
+      value : "/home/bojanv/Downloads/gadaprkv-daprcert-20210414.pfx"
