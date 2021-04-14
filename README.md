@@ -2,32 +2,17 @@
 
 This repository contains demos about how to start with a building block in Dapr. My weapon of choice will be [.NET](https://dot.net) Core framework.
 
-## Simple web call to the Dapr side car
+## Call to get state data behind the scenes
 
 As you already saw, Dapr uses [Sidecar pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar) to help you with most commong programming
 tasks. To be platform agnostic, you can connect to that sidecar via HTTP or gRPC call.
 
-With that, you can easily call an API via [Postman](https://www.postman.com/) or whatever tool can help you issue REST calls ([HttpRepl](https://github.com/dotnet/HttpRepl), [Insomnia](https://insomnia.rest/), ...), or just use CLI (Bash, Powershell).
+How to do the call with http api and invoke http or grpc call, check [Hello Dapr branch](https://github.com/bovrhovn/gab-2021-dapr/tree/hello-dapr).
 
-We will be using Powershell to do our call to the repo.
+# RUN THE CODE
 
-Let us use defaults and create sidecar containers for communication:
-
-`dapr run --app-id hello-dapr --dapr-http-port 3600`
-
-`Invoke-RestMethod -Method Post -ContentType 'application/json' -Body '[{ "key": "key1", "value": "I am sidecar state saver"}]' -Uri 'http://localhost:3600/v1.0/state/statestore'`
-
-And let use custom folder with custom definitions:
-
-`dapr run --app-id hello-dapr-custom --dapr-http-port 3700 --components-path ./dev-components`
-
-`Invoke-RestMethod -Method Post -ContentType 'application/json' -Body '[{ "key": "key2", "value": "I am sidecar dev component state saver"}]' -Uri 'http://localhost:3700/v1.0/state/dev-statestore'`
-
-*Reminder: you need to specify folder path to the components*
-
-Run the console application **Hello-Dapr-Cli** to get the state from different option (without knowing the implementation).
-
-Also, as an example, how this can be used in Kubernetes, you can check awesome example - [distributed calculator](https://github.com/dapr/quickstarts/tree/v1.0.0/distributed-calculator).
+1. In order to run the CLI demo, you will need to configure port via environment variable to reflect the port on which sidecar is listening. You can set **DAPR_GRPC_PORT** environment variable for app to connect to that grpc endpoint. In order to use table storage component, you will need to create azure storage account and populate values with data inside [tablestorage.yaml](https://github.com/bovrhovn/gab-2021-dapr/blob/state-management/src/DaprStateManagement/State-Management-Dapr-Cli/Components/tablestorage.yaml) file 
+2. In order to run the web page demo, you will need to provide an url to the web api site.
 
 # CREDITS
 
