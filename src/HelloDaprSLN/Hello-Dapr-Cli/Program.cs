@@ -21,7 +21,7 @@ namespace Hello_Dapr_Cli
                 $"Your selection is [blue]{whichSideCarToCall}[/], issuing call to that sidecar to get data..");
             var url = whichSideCarToCall == "Default sidecar"
                 ? "http://localhost:3600/v1.0/state/statestore/key1"
-                : "http://localhost:3700/v1.0/state/statestore/key2";
+                : "http://localhost:3700/v1.0/state/dev-statestore/key2";
             using var httpClient = new HttpClient();
             try
             {
