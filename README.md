@@ -1,14 +1,17 @@
-# Global Azure Bootcamp 2021 - session title [Dapr + Azure](https://globalazure.net/sessions/250682)
+# Global Azure Bootcamp 2021 - building blocks
 
 This repository contains demos for my session on [Dapr](https://dapr.io/) (distributed application runtime) for [Global Azure Bootcamp 2021 event](https://globalazure.net/). Talk is in Slovenian language as part of Slovenian Azure User Group initiative. 
 
-![Session on Global Azure 2021 site](https://csacoresettings.blob.core.windows.net/public/gab-2021-dapr.png)
+Demos are showing:
+1. usage of secrets stores (how to use them and call them)
+2. usage of pub/sub system (how to use default one and integrate with Azure Services)
+3. usage of state options (on [this branch](https://github.com/bovrhovn/gab-2021-dapr/tree/state-management))
 
-Demos are built in different branches to separate the concepts:
-1. starting with hello-dapr examples in branch [hello-dapr](https://github.com/bovrhovn/gab-2021-dapr/tree/hello-dapr)
-2. dealing with state in branch [state-managent](https://github.com/bovrhovn/gab-2021-dapr/tree/state-management)
-3. continuing with building blocks examples in branch building-blocks
-4. finishing with integration examples in branch integration
+In order to run the demo, you will need to create dapr applicaton and then run the applications (`dotnet run`). In order to run the web application, you will need to supply SignalR Connection string -  **Azure:SignalR:ConnectionString**. How to do that, check tutorial [here](https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-dotnet-core). 
+
+```
+dapr run --app-id dapr-sb --components path ./Components --dapr-grpc-port 50001
+```
 
 All demos are simple to prove the concepts, main features and capabilities. 
 
