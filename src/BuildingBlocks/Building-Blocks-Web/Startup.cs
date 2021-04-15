@@ -46,9 +46,10 @@ namespace Building_Blocks_Web
             app.UseRouting();
             app.UseCors("CorsPolicy");
             app.UseCloudEvents();
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute();
+                //endpoints.MapDefaultControllerRoute();
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
                 endpoints.MapSubscribeHandler();
