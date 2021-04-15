@@ -21,8 +21,8 @@ namespace Building_Blocks_Web.Controllers
             this.hubContext = hubContext;
         }
 
-        [Topic("pubsub","messages")]
-        [HttpPost("/messages")]
+        [Topic("servicebus-pubsub","messages")]
+        [HttpPost("messages")]
         public async Task<IActionResult> Handle([FromBody]AmmountMessage message)
         {
             string info = $"Processing event with id {message.Id} with ammount {message.Ammount}";

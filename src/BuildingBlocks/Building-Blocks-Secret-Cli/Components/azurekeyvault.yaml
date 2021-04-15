@@ -1,7 +1,7 @@
 apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
-  name: azurekeyvaultsb  
+  name: azurekeyvaultsecrets 
 spec:
   type: secretstores.azure.keyvault
   version: v1

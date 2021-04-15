@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Building-Blocks-Web", "Buil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Building-Blocks-Models", "Building-Blocks-Models\Building-Blocks-Models.csproj", "{F4119925-AE71-49CA-9D08-0FB68EA28C73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Building-Blocks-Secret-Cli", "Building-Blocks-Secret-Cli\Building-Blocks-Secret-Cli.csproj", "{6EB011AB-737A-4DAF-8EA0-7F1515DC2D20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{F4119925-AE71-49CA-9D08-0FB68EA28C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4119925-AE71-49CA-9D08-0FB68EA28C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4119925-AE71-49CA-9D08-0FB68EA28C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EB011AB-737A-4DAF-8EA0-7F1515DC2D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB011AB-737A-4DAF-8EA0-7F1515DC2D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB011AB-737A-4DAF-8EA0-7F1515DC2D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB011AB-737A-4DAF-8EA0-7F1515DC2D20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

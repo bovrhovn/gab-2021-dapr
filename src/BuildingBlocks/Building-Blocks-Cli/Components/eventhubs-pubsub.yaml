@@ -1,0 +1,19 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: eventhubs-pubsub  
+spec:
+  type: pubsub.azure.eventhubs
+  version: v1
+  metadata:    
+    - name: connectionString
+      value: "Endpoint=sb://gabdaprevents.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=2A0gxA5jN8Cm7QpzZf7j1Wj7uRRJJ/7m6QSndRuWjWQ=;EntityPath=messages"
+    - name: storageAccountName
+      value: "gadaprdata"    
+    - name: storageContainerName
+      value: "myeventhubstoragecontainer"
+    - name: storageAccountKey
+      secretKeyRef:
+        name: StorageKey    
+auth:
+  secretStore: azurekeyvaultsb

@@ -21,12 +21,11 @@ namespace Building_Blocks_Cli
         {
             HorizontalRule("Building blocks - pub sub");
             //var pubsubName = "servicebus-pubsub";
-            var pubsubName = "pubsub";
+            var pubsubName = "servicebus-pubsub";
             //publish events via service bus
             using var client = new DaprClientBuilder().Build();
 
             var cancellationToken = CancellationToken.None;
-
             AnsiConsole.MarkupLine("Sending random events to the topic");
 
             try
