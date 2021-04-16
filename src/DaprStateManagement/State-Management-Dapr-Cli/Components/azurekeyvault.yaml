@@ -13,4 +13,4 @@ spec:
     - name: spnClientId
       value: "5231c609-6205-4c62-8182-7fd81312947c"
     - name: spnCertificateFile
-      value : "/home/bojanv/Downloads/gadaprkv-daprcert-20210414.pfx"
+      value : "C:/Work/Dapr/gadaprkv-daprcert-20210414.pfx"
