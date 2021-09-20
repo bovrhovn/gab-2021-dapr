@@ -2,7 +2,7 @@
 
 This repository contains demos for my session on [Dapr](https://dapr.io/) (distributed application runtime) for [Global Azure Bootcamp 2021 event](https://globalazure.net/). Talk is in Slovenian language as part of Slovenian Azure User Group initiative. 
 
-![Session on Global Azure 2021 site](https://csacoresettings.blob.core.windows.net/public/gab-2021-dapr.png)
+![Session on Global Azure 2021 site](https://webeudatastorage.blob.core.windows.net/web/gab-2021-dapr.png)
 
 Demos are built in different branches to separate the concepts:
 1. starting with hello-dapr examples in branch [hello-dapr](https://github.com/bovrhovn/gab-2021-dapr/tree/hello-dapr)
