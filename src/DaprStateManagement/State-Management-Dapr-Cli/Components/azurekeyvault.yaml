@@ -7,10 +7,10 @@ spec:
   version: v1
   metadata:
     - name: vaultName
-      value: gadaprkv
-    - name: spnTenantId
-      value: "72f988bf-86f1-41af-91ab-2d7cd011db47"
-    - name: spnClientId
-      value: "5231c609-6205-4c62-8182-7fd81312947c"
-    - name: spnCertificateFile
-      value : "C:/Work/Dapr/gadaprkv-daprcert-20210414.pfx"
+      value: ntkkv
+    - name: azureTenantId
+      value: "eda6cdbb-7f74-4f2b-acc7-86b50cd3f8a7"
+    - name: azureClientId
+      value: "befe9c36-bf5c-4bdf-9203-7c2acc160f3f"
+    - name: azureClientSecret
+      value : "PE4rsGOPC+hPrd2KrfkF6ee1aDy26jIb6xH5eviN"

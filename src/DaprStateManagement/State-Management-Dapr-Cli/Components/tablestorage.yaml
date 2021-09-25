@@ -7,11 +7,8 @@ spec:
   version: v1
   metadata:
   - name: accountName
-    value: gadaprdata
+    value: ntkdatastorage
   - name: tableName
     value: persons
   - name: accountKey
-    secretKeyRef:
-      name: table-account-key        
-auth:
-  secretStore: azurekeyvault
+    value: 3NG3aODZHbIC5ErHm0HPOlxTznzlNazhzWwWWPtS7SCvC8rDf4iCmQNqh+a5uKZ/xo3GkZpcUHMYDGJZRejLtQ==       
