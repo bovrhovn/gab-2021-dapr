@@ -10,6 +10,12 @@ using State_Management_Models;
 
 namespace State_Management_Dapr_Web_Api.Controllers
 {
+    /// <summary>
+    /// runs API controller, which can be accessed by people
+    /// </summary>
+    /// <example>
+    ///     dapr run --app-id state-management-web-api --dapr-grpc-port 50001 --app-port 5002 
+    /// </example>
     [ApiController]
     [Route("persons")]
     public class PersonApiController : ControllerBase
