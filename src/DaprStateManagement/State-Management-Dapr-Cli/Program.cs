@@ -9,9 +9,17 @@ namespace State_Management_Dapr_Cli
 {
     class Program
     {
+        /// <summary>
+        /// run simple state management with Azure Tables
+        /// </summary>
+        /// <param name="args">any arguments from command line</param>
+        /// <remarks>
+        ///     in order to run the app, you'll need to run dapr before
+        ///     dapr run --app-id state-management-app --dapr-grpc-port 50001 --components-path C:/Work/Dapr/gab-2021-dapr/src/DaprStateManagement/State-Management-Dapr-Cli/Components/
+        /// </remarks>
         static async Task Main(string[] args)
         {
-            const string storeName = "statestore";
+            const string storeName = "tablestorage";
             const string stateKeyName = "person-key";
             HorizontalRule("State management");
             using var client = new DaprClientBuilder().Build();
