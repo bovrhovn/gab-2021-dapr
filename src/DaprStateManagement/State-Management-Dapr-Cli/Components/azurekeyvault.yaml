@@ -7,10 +7,10 @@ spec:
   version: v1
   metadata:
     - name: vaultName
-      value: ntkkv
+      value: KEYVAULTNAME
     - name: azureTenantId
-      value: "eda6cdbb-7f74-4f2b-acc7-86b50cd3f8a7"
+      value: "TENANTID"
     - name: azureClientId
-      value: "befe9c36-bf5c-4bdf-9203-7c2acc160f3f"
+      value: "CLIENTID"
     - name: azureClientSecret
-      value : "PE4rsGOPC+hPrd2KrfkF6ee1aDy26jIb6xH5eviN"
+      value : "CLIENTSECRET"
