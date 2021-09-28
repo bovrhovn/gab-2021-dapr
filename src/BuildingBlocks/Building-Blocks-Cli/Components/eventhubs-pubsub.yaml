@@ -7,7 +7,7 @@ spec:
   version: v1
   metadata:    
     - name: connectionString
-      value: "Endpoint=sb://gabdaprevents.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=2A0gxA5jN8Cm7QpzZf7j1Wj7uRRJJ/7m6QSndRuWjWQ=;EntityPath=messages"
+      value: "CONNECTIONSTRING"
     - name: storageAccountName
       value: "gadaprdata"    
     - name: storageContainerName
