@@ -7,10 +7,10 @@ spec:
   version: v1
   metadata:
     - name: vaultName
-      value: gadaprkv
+      value: KV-NAME
     - name: spnTenantId
-      value: "72f988bf-86f1-41af-91ab-2d7cd011db47"
+      value: "APP-ID"
     - name: spnClientId
-      value: "5231c609-6205-4c62-8182-7fd81312947c"
+      value: "CLIENT-ID"
     - name: spnCertificateFile
-      value : "C:/Work/Dapr/gadaprkv-daprcert-20210414.pfx"
+      value : "C:/PATH-TO-PFX"
