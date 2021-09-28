@@ -7,8 +7,8 @@ spec:
   version: v1
   metadata:
   - name: accountName
-    value: ntkdatastorage
+    value: STORAGEACCOUNTNAME
   - name: tableName
     value: persons
   - name: accountKey
-    value: 3NG3aODZHbIC5ErHm0HPOlxTznzlNazhzWwWWPtS7SCvC8rDf4iCmQNqh+a5uKZ/xo3GkZpcUHMYDGJZRejLtQ==       
+    value: STORAGEKEY      
