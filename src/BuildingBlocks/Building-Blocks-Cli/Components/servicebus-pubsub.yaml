@@ -35,6 +35,6 @@ spec:
     - name: connectionRecoveryInSec # Optional
       value: 2
     - name: connectionString # Required
-      value: "Endpoint=sb://gabdaprsb.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=X9GZ+oVJs1mIXMkG1Wz4N5/H/p76oQO5tupXVpK5rxU=;EntityPath=messages"
+      value: "CONNSTRING"
 auth:
   secretStore: azurekeyvaultsb
